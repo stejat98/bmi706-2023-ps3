@@ -133,7 +133,14 @@ chart = alt.Chart(subset).mark_rect().encode(
 )
 ### P2.5 ###
 
-st.altair_chart(chart, use_container_width=True)
+chart2 = alt.Chart(subset).mark_bar().encode(
+    y=alt.Y("Country:N", title=None),
+    x=alt.X("sum(Pop):Q", title="Sum of population size", axis=alt.Axis(format="~s")), ## referring to PSET1 solution
+)
+
+chartsLink = chart & chart2
+
+st.altair_chart(chartsLink, use_container_width=True)
 
 countries_in_subset = subset["Country"].unique()
 if len(countries_in_subset) != len(countries):
