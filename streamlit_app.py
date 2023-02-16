@@ -89,7 +89,7 @@ subset = subset[subset["Sex"] == sex]
 
 countries = st.multiselect(
     'What are your favorite colors',
-    set(subset["Country"]),
+    set(df["Country"]),
     ["Austria",
     "Germany",
     "Iceland",
