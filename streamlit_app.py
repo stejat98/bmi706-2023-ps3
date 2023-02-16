@@ -123,7 +123,7 @@ ages = [
     "Age >64",
 ]
 
-chart = alt.Chart(subset).mark_rect().encode(
+chart = alt.Chart(df).mark_rect().encode(
     x=alt.X("Age", sort=ages),
     y="Country",
     color=alt.Color('Rate',scale=alt.Scale(type='log', domain=(0.01, 1000), clamp=True)),
@@ -133,7 +133,7 @@ chart = alt.Chart(subset).mark_rect().encode(
 )
 ### P2.5 ###
 
-chart2 = alt.Chart(subset).mark_bar().encode(
+chart2 = alt.Chart(df).mark_bar().encode(
     y=alt.Y("Country:N", title = "Country"),
     x=alt.X("sum(Pop):Q", title="Sum of population size", axis=alt.Axis(format="~s")), ## referring to PSET1 solution
 )
