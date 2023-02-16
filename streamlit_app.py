@@ -86,15 +86,18 @@ subset = subset[subset["Sex"] == sex]
 ### P2.3 ###
 # replace with st.multiselect
 # (hint: can use current hard-coded values below as as `default` for selector)
-countries = [
-    "Austria",
+
+countries = st.multiselect(
+    'What are your favorite colors',
+    set(subset["Country"]),
+    ["Austria",
     "Germany",
     "Iceland",
     "Spain",
     "Sweden",
     "Thailand",
-    "Turkey",
-]
+    "Turkey"])
+
 subset = subset[subset["Country"].isin(countries)]
 ### P2.3 ###
 
