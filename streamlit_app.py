@@ -106,7 +106,7 @@ subset = subset[subset["Country"].isin(countries)]
 # replace with st.selectbox
 cancer = st.selectbox(
     'Cancer',
-    set(df["Cancer"]), "Leukaemia")
+    set(df["Cancer"]))
 subset = subset[subset["Cancer"] == cancer]
 ### P2.4 ###
 
