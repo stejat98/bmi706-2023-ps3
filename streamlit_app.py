@@ -130,13 +130,14 @@ chart = alt.Chart(subset).mark_rect().encode(
     tooltip=["Rate"]
 ).properties(
     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}",
+    width=550
 )
 ### P2.5 ###
 
 chart2 = alt.Chart(subset).mark_bar().encode(
     y=alt.Y("Country:N", title=None),
     x=alt.X("sum(Pop):Q", title="Sum of population size", axis=alt.Axis(format="~s")), ## referring to PSET1 solution
-)
+).properties(width=550)
 
 chartsLink = chart & chart2
 
