@@ -88,7 +88,7 @@ subset = subset[subset["Sex"] == sex]
 # (hint: can use current hard-coded values below as as `default` for selector)
 
 countries = st.multiselect(
-    'What are your favorite colors',
+    'Country',
     set(df["Country"]),
     ["Austria",
     "Germany",
@@ -104,7 +104,9 @@ subset = subset[subset["Country"].isin(countries)]
 
 ### P2.4 ###
 # replace with st.selectbox
-cancer = "Malignant neoplasm of stomach"
+cancer = st.selectbox(
+    'Cancer',
+    set(df["Country"]))
 subset = subset[subset["Cancer"] == cancer]
 ### P2.4 ###
 
