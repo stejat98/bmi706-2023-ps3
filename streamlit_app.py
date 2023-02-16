@@ -134,7 +134,7 @@ chart = alt.Chart(subset).mark_rect().encode(
 ### P2.5 ###
 
 chart2 = alt.Chart(subset).mark_bar().encode(
-    y=alt.Y("Country:N", title = "Country"),
+    y=alt.Y("Country:N", title = "Country", sort="-x"),
     x=alt.X("sum(Pop):Q", title="Sum of population size", axis=alt.Axis(format="~s")), ## referring to PSET1 solution
 )
 
