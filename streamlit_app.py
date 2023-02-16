@@ -64,7 +64,7 @@ st.write("## Age-specific cancer mortality rates")
 # replace with st.slider
 year = st.slider(
     'Select a year',
-   min(df["Year"]), max(df["Year"]))
+   min(df["Year"]), max(df["Year"]),"2012")
 
 subset = df[df["Year"] == year]
 ### P2.1 ###
@@ -106,7 +106,7 @@ subset = subset[subset["Country"].isin(countries)]
 # replace with st.selectbox
 cancer = st.selectbox(
     'Cancer',
-    set(df["Cancer"]))
+    set(df["Cancer"]), "Leukaemia")
 subset = subset[subset["Cancer"] == cancer]
 ### P2.4 ###
 
@@ -127,7 +127,7 @@ chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X("Age", sort=ages),
     y="Country",
     color=alt.Color('Rate',scale=alt.Scale(type='log', domain=(0.01, 1000), clamp=True)),
-    tooltip=["Rate"]
+    tooltip=["Mortality Rate per 100k"]
 ).properties(
     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}"
 )
